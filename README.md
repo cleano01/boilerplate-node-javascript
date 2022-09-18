@@ -28,11 +28,11 @@ Simple API to style base code with Node with JavaScript.
 
 - Install the following plugins in your Visual Studio Code:
 
-  > 1. Dracula Official = Theme for Visual Studio Code.
-  > 2. Material Icon theme = Theme of icon for Visual Studio Code.
-  > 3. EditorConfig = Pattern style for code.
-  > 4. ESLint = Pattern style for code.
-  > 5. Prettier = Pattern style for code.
+  > 1. Dracula Official -> Theme for Visual Studio Code.
+  > 2. Material Icon theme -> Theme of icon for Visual Studio Code.
+  > 3. EditorConfig -> Pattern style for code.
+  > 4. ESLint -> Pattern style for code.
+  > 5. Prettier -> Pattern style for code.
 
 ## Installation
 
