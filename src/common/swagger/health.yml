@@ -1,0 +1,22 @@
+/health:
+  get:
+    description: check up API.
+    summary: check up API.
+    tags:
+    - Health
+    responses:
+      200:
+        description: ok
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/definitions/Health'
+      400:
+        description: Bad request
+      404:
+        description: Client not found.
+
+
+
+
