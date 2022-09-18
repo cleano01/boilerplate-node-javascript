@@ -1,0 +1,54 @@
+definitions:
+  Module:
+    type: object
+    properties:
+      type:
+        type: string
+      attributes:
+        type: array
+        items:
+          properties:
+            name:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                type:
+                  type: string
+                maxLength:
+                  type: number
+                minLength:
+                  type: number
+                required:
+                  type: boolean
+            jobTitle:
+              type: object
+              properties:
+                title:
+                  type: string
+                type:
+                  type: string
+          $ref: '#/definitions/Module'
+
+  Health:
+    type: object
+    properties:
+      type:
+        type: string
+      attributes:
+        type: object
+        properties:
+          health_checker_api:
+            type: object
+            properties:
+              uptime:
+                type: number
+              message:
+                type: string
+              timestamp:
+                type: number
+        items:
+          $ref: '#/definitions/Health'
+

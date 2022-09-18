@@ -1,0 +1,35 @@
+{
+   //tema dos icones
+    "workbench.iconTheme": "material-icon-theme",
+
+    //configuração da fonte e tamanhos
+    "editor.fontSize": 16.2,
+    "editor.tabSize": 2,
+    "editor.lineHeight": 24,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+
+    //tema
+    "workbench.colorTheme": "Dracula",
+
+    //expandir as pastas vazias
+    "explorer.compactFolders": false,
+    "notebook.compactView": false,
+
+    //tamanho da linha
+    "editor.rulers": [100, 120],
+
+    //forçar formato/estilo do Eslint, para Js e Ts
+    "[javascript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.associations": {
+        "*.js": "javascript"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
