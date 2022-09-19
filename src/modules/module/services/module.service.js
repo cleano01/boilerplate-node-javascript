@@ -1,6 +1,6 @@
-import { AppError, code_validate } from "../../../common/errors";
-import { helper_error } from "../../../common/helpers";
-import { handlers, repositories } from "../index";
+import { AppError, code_validate } from "../../../common/errors/index.js";
+import { helper_error } from "../../../common/helpers/index.js";
+import { handlers, repositories } from "../index.js";
 
 const mod_service = () => {
   handlers.module_handler.mod_handler();

@@ -1,7 +1,7 @@
 import httpStatus from "http-status";
 import express from "express";
 
-import { helper_serializer } from "../helpers";
+import { helper_serializer } from "../helpers/index.js";
 
 const health_checker = (req, res, next) => {
   try {

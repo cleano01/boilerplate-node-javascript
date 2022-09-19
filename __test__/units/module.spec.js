@@ -1,6 +1,6 @@
-import { services } from "../../src/modules/module";
+import { services } from "../../src/modules/module/index.js";
 
-jest.mock("../../src/modules/module/repositories/module.repository", () => ({
+jest.mock("../../src/modules/module/repositories/module.repository.js", () => ({
   mod_repository: jest.fn(() => [
     {
       name: {

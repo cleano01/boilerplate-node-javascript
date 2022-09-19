@@ -1,8 +1,8 @@
 import express from "express";
 
-import { controllers } from "../index";
+import { controllers } from "../index.js";
 
-import { module_validator } from "../validators";
+import { module_validator } from "../validators/index.js";
 
 const router = express.Router();
 

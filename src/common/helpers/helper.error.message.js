@@ -1,4 +1,4 @@
-import { message_validate } from "../errors";
+import { message_validate } from "../errors/index.js";
 
 const get_message_error = (code) => {
   const data_error = message_validate.filter(
