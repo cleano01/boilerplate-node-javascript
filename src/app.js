@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors(config_cors));
 
-app.use("/v1", router);
+app.use("/api/v1", router);
 
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
