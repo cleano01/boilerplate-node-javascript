@@ -1,3 +1,3 @@
-import swagger from "./swagger";
+import swagger from "./swagger.js";
 
 export default swagger;

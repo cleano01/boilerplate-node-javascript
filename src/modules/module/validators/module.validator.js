@@ -1,7 +1,10 @@
 import { body } from "express-validator";
 
-import { AppError, code_validate } from "../../../common/errors";
-import { helper_error, helper_validate } from "../../../common/helpers";
+import { AppError, code_validate } from "../../../common/errors/index.js";
+import {
+  helper_error,
+  helper_validate,
+} from "../../../common/helpers/index.js";
 
 export default [
   body("email")

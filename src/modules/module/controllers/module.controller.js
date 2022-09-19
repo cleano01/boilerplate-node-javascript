@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
-import { helper_serializer } from "../../../common/helpers";
-import { services } from "../index";
+import { helper_serializer } from "../../../common/helpers/index.js";
+import { services } from "../index.js";
 
 const module = (req, res, next) => {
   try {

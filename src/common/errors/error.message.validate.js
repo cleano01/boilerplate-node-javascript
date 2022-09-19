@@ -1,4 +1,4 @@
-import error_code_validade from "./error.code.validate";
+import error_code_validade from "./error.code.validate.js";
 
 export default Object.freeze([
   {

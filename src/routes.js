@@ -1,10 +1,10 @@
 import { Router } from "express";
 
 import swaggerUi from "swagger-ui-express";
-import swagger from "./common/swagger";
+import swagger from "./common/swagger/index.js";
 
-import { routes as router_mod } from "./modules/module";
-import { health } from "./common/utils";
+import { routes as router_mod } from "./modules/module/index.js";
+import { health } from "./common/utils/index.js";
 
 const router = Router();
 

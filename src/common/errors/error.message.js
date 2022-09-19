@@ -1,6 +1,4 @@
-// Internal server erro
-
-import error_code from "./error.code";
+import error_code from "./error.code.js";
 
 export default Object.freeze([
   {

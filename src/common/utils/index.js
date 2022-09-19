@@ -1,4 +1,4 @@
-import health from "./health";
-import logger from "./logger";
+import health from "./health.js";
+import logger from "./logger.js";
 
 export { health, logger };
