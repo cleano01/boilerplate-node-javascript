@@ -1,0 +1,22 @@
+/mods:
+  get:
+    description: Get a module.
+    summary: Get a module.
+    tags:
+    - Module
+    responses:
+      200:
+        description: ok
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/definitions/Module'
+      400:
+        description: Bad request
+      404:
+        description: Client not found.
+
+
+
+
