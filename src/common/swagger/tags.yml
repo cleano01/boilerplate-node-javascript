@@ -1,0 +1,8 @@
+tags:
+- name: Module
+  description: Module endpoints
+- name: Health
+  description: Health endpoints
+
+
+
