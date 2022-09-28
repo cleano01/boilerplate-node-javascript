@@ -55,3 +55,23 @@ Simple API to style base code with Node with JavaScript.
 
 - In the project directory, execute the command below to run the tests:
   > npm test
+
+## Docker
+
+---
+
+- To run docker in local development mode, first be in the project directory, then run:
+
+  > docker run --rm -it -v $(pwd)/:/usr/src/app -p 3000:3000 node:16 bash
+
+- After running docker, let's go inside the project in the container:
+
+  > cd usr/src/app
+
+- Inside the project in the container, we run the following command:
+
+  > npm i
+
+- After installing the project dependencies, we run the project, with the command:
+
+  > npm run dev
