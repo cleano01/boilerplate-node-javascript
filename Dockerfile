@@ -17,6 +17,6 @@ COPY --chown=node:node src/ ./src
 
 USER node
 
-CMD ["node",  "--es-module-specifier-resolution=node", "src/server.js" ]
+CMD ["npm",  "start"]
 
 
