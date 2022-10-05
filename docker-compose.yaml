@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: user/app-node:v1.0.0
+    container_name: node-app
+    networks:
+      - node-network
+    ports:
+      - "3000:5000"
+
+
+networks:
+  node-network:
+   driver: bridge
