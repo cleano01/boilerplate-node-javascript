@@ -75,3 +75,15 @@ Simple API to style base code with Node with JavaScript.
 - After installing the project dependencies, we run the project, with the command:
 
   > npm run dev
+
+## Docker-Compose
+
+---
+
+- In the project directory, execute the command below:
+
+> docker-compose up -d
+
+- In the project directory, run the command below, if you have modified the Dockerfile:
+
+> docker-compose up -d --build
