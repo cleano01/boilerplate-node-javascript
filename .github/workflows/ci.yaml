@@ -1,5 +1,10 @@
 name: ci-boilerplate-node-javascript-workflow
-on: [push]
+on:
+  pull_request:
+    branches:
+      - develop
+      - homologation
+      - main
 
 jobs:
   check-application:
