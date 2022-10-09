@@ -21,19 +21,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: check-application
     steps:
-      - run: echo Deploy [Deveplop]
+      - run: echo Deploy [DEVELOP]
 
   deploy-homologation:
     runs-on: ubuntu-latest
     needs: check-application
     steps:
-      - run: echo Deploy [Homologation]
+      - run: echo Deploy [HOMOLOGATION]
 
   deploy-main:
     runs-on: ubuntu-latest
     needs: check-application
     steps:
-      - run: echo Deploy [Main]
+      - run: echo Deploy [MAIN]
 
 
 
