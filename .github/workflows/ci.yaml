@@ -1,9 +1,14 @@
 name: ci/cd-boilerplate-node-javascript-workflow
-on: push
+on:
+  pull_request:
+    branches:
+      - develop
+      - homologation
+      - main
 
 jobs:
   deploy-develop:
-    if: ${{ github.ref == 'refs/heads/develop' }}
+    if: ${{ GITHUB_REF_NAME == 'develop' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
