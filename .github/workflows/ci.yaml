@@ -18,9 +18,7 @@ jobs:
       - run: npm test
 
   deploy-develop:
-    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
-    environment: develop
     needs: check-application
     steps:
       - run: echo Deploy [DEVELOP]
@@ -34,7 +32,6 @@ jobs:
 
   deploy-main:
     runs-on: ubuntu-latest
-    environment: main
     needs: deploy-homologation
     steps:
       - run: echo Deploy [MAIN]
