@@ -8,40 +8,9 @@ on:
 
 jobs:
   deploy-develop:
+    if: ${{ github.ref == 'refs/heads/develop' }}
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop'
     steps:
-      - run: echo Deploy [DEVELOP]!
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.16.0
-      - run: npm ci
-      - run: npm test
-
-  deploy-homologation:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/homologation'
-    steps:
-      - run: echo Deploy [HOMOLOGATION]
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.16.0
-      - run: npm ci
-      - run: npm test
-
-  deploy-main:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - run: echo Deploy [MAIN]
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.16.0
-      - run: npm ci
-      - run: npm test
-
+      - run: echo "Deploying to production server on branch $GITHUB_REF"
 
 
