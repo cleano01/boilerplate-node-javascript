@@ -1,4 +1,4 @@
-name: ci-boilerplate-node-javascript-workflow
+name: ci/cd-boilerplate-node-javascript-workflow
 on:
   pull_request:
     branches:
@@ -7,31 +7,9 @@ on:
       - main
 
 jobs:
-  check-application:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.16.0
-      - run: npm ci
-      - run: npm test
-
   deploy-develop:
     runs-on: ubuntu-latest
-    needs: check-application
     steps:
-      - run: echo Deploy [DEVELOP]
-
-  deploy-homologation:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Deploy [HOMOLOGATION]
-
-  deploy-main:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Deploy [MAIN]
-
+      - run: echo "Deploying to production server on branch $GITHUB_REF_NAME"
 
 
