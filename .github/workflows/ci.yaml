@@ -8,10 +8,10 @@ on:
 
 jobs:
   deploy-develop:
-    if: ${{ env.github_base_ref== 'develop' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo Deploy in [DEVELOP]
+      - run: echo Deploy in [DEVELOP] $GITHUB_BASE_REF
+
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
