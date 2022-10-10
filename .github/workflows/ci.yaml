@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy-develop:
-    if: echo "$GITHUB_BASE_REF" == 'develop'
+    if: ${{echo "$GITHUB_BASE_REF" == 'develop' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy in [DEVELOP]
