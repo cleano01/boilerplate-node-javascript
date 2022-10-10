@@ -8,8 +8,15 @@ on:
 
 jobs:
   deploy-develop:
+    if: $GITHUB_BASE_REF == 'develop'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying server on branch $GITHUB_BASE_REF"
+      - run: echo Deploy in [DEVELOP]
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+      - run: npm ci
+      - run: npm test
 
 
