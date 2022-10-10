@@ -9,7 +9,7 @@ on:
 jobs:
   deploy-develop:
     runs-on: ubuntu-latest
-    if: ${{ github.event.ref == 'refs/heads/develop' }}
+    if: ${{ github.ref == 'refs/heads/develop' }}
     steps:
       - run: echo Deploy [DEVELOP]!
       - uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
 
   deploy-homologation:
     runs-on: ubuntu-latest
-    if: ${{ github.event.ref == 'refs/heads/homologation' }}
+    if: ${{ github.ref == 'refs/heads/homologation' }}
     steps:
       - run: echo Deploy [HOMOLOGATION]
       - uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
 
   deploy-main:
     runs-on: ubuntu-latest
-    if: ${{ github.event.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - run: echo Deploy [MAIN]
       - uses: actions/checkout@v3
