@@ -5,13 +5,16 @@ on:
       - develop
       - homologation
       - main
+env:
+  GITHUB_BASE_REF: ${{ github.base_ref }}
 
 jobs:
   deploy-develop:
+    if: GITHUB_BASE_REF == 'develop'
     runs-on: ubuntu-latest
     steps:
-      - run: echo Deploy in [DEVELOP] $GITHUB_BASE_REF
-
+      - run: echo GITHUB_BASE_REF
+      - run: echo Deploy in [DEVELOP]
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
