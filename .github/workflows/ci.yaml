@@ -10,7 +10,7 @@ env:
 
 jobs:
   deploy-develop:
-    if: ${{ GITHUB_BASE_REF == 'develop'}}
+    if: ${{ github.GITHUB_BASE_REF  == 'develop'}}
     runs-on: ubuntu-latest
     steps:
       - run: echo GITHUB_BASE_REF
