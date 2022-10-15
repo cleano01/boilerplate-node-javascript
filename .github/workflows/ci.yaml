@@ -18,6 +18,16 @@ jobs:
       - run: npm ci
       - run: npm test
 
+  deploy-homologation:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Deploy [HOMOLOGATION]
+
+  deploy-main:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Deploy [MAIN]
+
 
 
 
