@@ -11,7 +11,7 @@ jobs:
   deploy-develop:
     runs-on: ubuntu-latest
     steps:
-      - run: echo github.ref
+      - run: github.ref
       - run: echo Deploy in [DEVELOP]
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
