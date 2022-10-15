@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy-develop:
+    if: ${{ github.base_ref	== 'develop' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy in [DEVELOP]
@@ -19,11 +20,13 @@ jobs:
       - run: npm test
 
   deploy-homologation:
+    if: ${{ github.base_ref	== 'homologation' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy [HOMOLOGATION]
 
   deploy-main:
+    if: ${{ github.base_ref	== 'main' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy [MAIN]
