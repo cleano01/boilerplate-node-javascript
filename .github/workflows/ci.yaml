@@ -19,11 +19,13 @@ jobs:
       - run: npm test
 
   deploy-homologation:
+    if: github.ref == 'refs/heads/homologation'
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy [HOMOLOGATION]
 
   deploy-main:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy [MAIN]
