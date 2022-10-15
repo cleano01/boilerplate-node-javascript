@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy-develop:
-    if: github.ref == 'develop'
+    if: ${{ github.ref == 'develop' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy in [DEVELOP]
