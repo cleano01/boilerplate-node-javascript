@@ -54,7 +54,11 @@ Simple API to style base code with Node with JavaScript.
   > npm run start
 
 - In the project directory, execute the command below to run the tests:
+
   > npm test
+
+- In the project directory, execute the command below to run view coverage of test:
+  > npm test:coverage
 
 ## Docker
 
