@@ -1,5 +1,5 @@
 {
-  "name": "octopus-boilerplate-node-js",
+  "name": "boilerplate-node-js",
   "version": "1.0.0",
   "description": "Código base para futuros serviços com node.js com JavaScript.",
   "main": "index.js",
