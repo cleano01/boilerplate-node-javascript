@@ -5,11 +5,17 @@ const logger = createLogger({
   format: format.combine(
     format.timestamp(),
     format.errors({ stack: true }),
-    format.json()
+    format.align(),
+    format.printf(
+      (info) =>
+        `[${info.timestamp}] -  [env: ${
+          process.env.NODE_ENV || ""
+        }] - [service: ${process.env.SERVICE_NAME || ""}]  - [${info.level}: ${
+          info.message || ""
+        }] - ${info.stack || ""} \n`
+    )
   ),
-  defaultMeta: { service: process.env.SERVICE_NAME },
   exitOnError: false,
   transports: [new transports.Console()],
 });
-
 export default logger;
