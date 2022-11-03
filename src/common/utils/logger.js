@@ -18,4 +18,5 @@ const logger = createLogger({
   exitOnError: false,
   transports: [new transports.Console()],
 });
+
 export default logger;
