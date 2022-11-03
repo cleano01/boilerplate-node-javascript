@@ -1,4 +1,4 @@
-# OCTOPUS-BOILERPLATE-NODE.JS-JAVASCRIPT
+# BOILERPLATE-NODE.JS-JAVASCRIPT
 
 Simple API to style base code with Node with JavaScript.
 
