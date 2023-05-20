@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../../src/app.js";
 
 describe("module", () => {
-  test("should return array object of module", async () => {
+  it("should return array object of module", async () => {
     const response = await request(app).get("/api/v1/mods");
 
     expect(response.body).toEqual({
@@ -25,7 +25,7 @@ describe("module", () => {
     });
   });
 
-  test("should return response status 200 of module ", async () => {
+  it("should return response status 200 of module ", async () => {
     const response = await request(app).get("/api/v1/mods");
 
     expect(response.status).toBe(200);
