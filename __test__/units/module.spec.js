@@ -19,7 +19,7 @@ jest.mock("../../src/modules/module/repositories/module.repository.js", () => ({
 }));
 
 describe("mdoule.service", () => {
-  test("should return object of database", () => {
+  it("should return object of database", () => {
     const response = services.mod_service.mod_service();
     expect(response).toEqual([
       {
