@@ -13,7 +13,6 @@ import { logger } from "./common/utils/index.js";
 const app = express();
 
 app.use(helmet());
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -23,6 +22,8 @@ app.use("/api/v1", router);
 
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
+    logger.info(error);
+
     return res.status(error.status).json({
       errors: [
         { code: error.code, status: error.status, message: error.message },
