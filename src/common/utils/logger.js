@@ -13,7 +13,7 @@ const logger = createLogger({
           process.env.NODE_ENV
         }}, {service: ${process.env.SERVICE_NAME}}, {${
           info.level
-        } ${info.message.trim()}}, {stack: ${info.stack}}`
+        }: ${info.message.trim()}}, {stack: ${info.stack}}`
     )
   ),
   exitOnError: false,
