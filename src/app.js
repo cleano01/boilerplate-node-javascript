@@ -22,6 +22,8 @@ app.use("/api/v1", router);
 
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
+    logger.info(error);
+
     return res.status(error.status).json({
       errors: [
         { code: error.code, status: error.status, message: error.message },
