@@ -8,7 +8,9 @@ const validate = (req, res, next) => {
   }
 
   let extractedErrors = [];
-  errors.array().map((err) => extractedErrors.push(err.msg));
+  errors
+    .array()
+    .map((err) => typeof err.msg !== "string" && extractedErrors.push(err.msg));
   extractedErrors = [...new Set(extractedErrors)];
 
   logger.error(JSON.stringify({ ...extractedErrors }));
