@@ -24,7 +24,7 @@ const module_error = (req, res, next) => {
 
 const module_service_validator = (req, res, next) => {
   try {
-    const mod = services.mod_service_validator();
+    const mod = services.mod_service.mod_service_validator();
     const response = helper_serializer.serializer("module", mod);
     return res.status(httpStatus.OK).json(response);
   } catch (error) {

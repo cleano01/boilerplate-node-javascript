@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express, { json } from "express";
+import express from "express";
 import "express-async-errors";
 import cors from "cors";
 import helmet from "helmet";
@@ -17,6 +17,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors(config_cors));
+/*
+app.use((req, res, next) => {
+  const format_request_log = {
+    http_method: req.method,
+    body: req.body,
+    params: req.params,
+    url: req.url,
+    status: res.statusCode,
+  };
+  logger.info(JSON.stringify({ ...format_request_log }));
+  next();
+});
+*/
 
 app.use("/api/v1", router);
 

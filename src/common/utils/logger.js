@@ -13,7 +13,7 @@ const logger = createLogger({
     )
   ),
   exitOnError: false,
-  transports: [new transports.Console()],
+  transports: [new transports.Console({ handleExceptions: true })],
 });
 
 export default logger;
