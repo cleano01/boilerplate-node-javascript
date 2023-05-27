@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express from "express";
+import express, { json } from "express";
 import "express-async-errors";
 import cors from "cors";
 import helmet from "helmet";
@@ -22,12 +22,15 @@ app.use("/api/v1", router);
 
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
-    logger.info(error);
+    const format_error = {
+      code: error.code,
+      status: error.status,
+      message: error.message,
+    };
 
+    logger.error(JSON.stringify({ ...format_error }));
     return res.status(error.status).json({
-      errors: [
-        { code: error.code, status: error.status, message: error.message },
-      ],
+      errors: [{ ...format_error }],
     });
   }
 
