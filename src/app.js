@@ -16,20 +16,29 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors(config_cors));
-/*
 app.use((req, res, next) => {
   const format_request_log = {
     http_method: req.method,
     body: req.body,
     params: req.params,
     url: req.url,
-    status: res.statusCode,
+    status: null,
   };
-  logger.info(JSON.stringify({ ...format_request_log }));
+
+  const original_json = res.json;
+  res.json = (data) => {
+    format_request_log.status = res.statusCode;
+
+    res.statusCode <= 299 &&
+      logger.info(JSON.stringify({ ...format_request_log }));
+    res.json = original_json;
+    res.json(data);
+  };
+
   next();
 });
-*/
+
+app.use(cors(config_cors));
 
 app.use("/api/v1", router);
 
