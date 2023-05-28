@@ -16,18 +16,43 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+  const format_request_log = {
+    http_method: req.method,
+    body: req.body,
+    params: req.params,
+    url: req.url,
+    status: null,
+  };
+
+  const original_json = res.json;
+  res.json = (data) => {
+    format_request_log.status = res.statusCode;
+
+    res.statusCode <= 299 &&
+      logger.info(JSON.stringify({ ...format_request_log }));
+    res.json = original_json;
+    res.json(data);
+  };
+
+  next();
+});
+
 app.use(cors(config_cors));
 
 app.use("/api/v1", router);
 
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
-    logger.info(error);
+    const format_error = {
+      code: error.code,
+      status: error.status,
+      message: error.message,
+    };
 
+    logger.error(JSON.stringify({ ...format_error }));
     return res.status(error.status).json({
-      errors: [
-        { code: error.code, status: error.status, message: error.message },
-      ],
+      errors: [{ ...format_error }],
     });
   }
 

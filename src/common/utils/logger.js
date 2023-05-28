@@ -9,11 +9,15 @@ const logger = createLogger({
     format.align(),
     format.printf(
       (info) =>
-        `{timestamp: ${info.timestamp}}, {env: ${process.env.NODE_ENV}}, {service: ${process.env.SERVICE_NAME}}, {${info.level}: ${info.message}}, {stack: ${info.stack}}`
+        `{timestamp: ${info.timestamp}}, {env: ${
+          process.env.NODE_ENV
+        }}, {service: ${process.env.SERVICE_NAME}}, {${
+          info.level
+        }: ${info.message.trim()}}, {stack: ${info.stack}}`
     )
   ),
   exitOnError: false,
-  transports: [new transports.Console()],
+  transports: [new transports.Console({ handleExceptions: true })],
 });
 
 export default logger;
